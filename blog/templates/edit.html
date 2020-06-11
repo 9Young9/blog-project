@@ -1,3 +1,17 @@
+<style>
+    body {
+        background-color: goldenrod;   
+    }
+
+    div {
+        font-family:"Georgia";
+        text-align:center;
+        padding:5rem;
+        width:50%;
+        margin:auto;
+    }
+</style>
+
 <h1>글 수정하기</h1>
 <form action="{%url 'update' blog.id %}" method = "POST">
     <!-- GET방식은 보안에 안좋다. 그래서 POST방식으로 action 취함 -->

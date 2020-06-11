@@ -1,17 +1,31 @@
-{% load static %}
-<!-- static 불러와주기 -->
+<style>
+    body {
+        background-color: goldenrod;   
+    }
 
-<h1>새 글 작성하기</h1>
-<img src="{% static '아리.jpg' %}" alt="">
+    div {
+        font-family:"Georgia";
+        text-align:center;
+        padding:5rem;
+        width:50%;
+        margin:auto;
+    }
+</style>
 
-<form method='POST' enctype="multipart/form-data">
-    {% csrf_token %}
-    <table>
-        {{form.as_table}}
-    </table>
 
-    <input class = "btn btn-dark" type="submit" value="저장">
-</form>
+
+<div>
+    <h1>new post</h1>
+    <form method='POST' enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+    
+        <input class = "btn btn-dark" type="submit" value="저장">
+    </form>
+</div>
+
 
 
 
