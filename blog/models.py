@@ -16,4 +16,4 @@ class Blog(models.Model):
         return self.title
 
     def summary(self):  # body 길 때를 대비해 만들었다
-        return self.body[:100]  # 100글자만 딱 나오도록
+        return self.body[:120]  # 120글자만 딱 나오도록

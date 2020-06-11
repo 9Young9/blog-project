@@ -1,25 +1,58 @@
 {%load static %}
 
-<h1>Blog Project</h1>
+<style>
+    body {
+        background-color: goldenrod;   
+    }
 
-<a href="{% url 'new' %}">새 글 작성하기</a>
+    div {
+        font-family:"Georgia";
+        text-align:center;
+        width:50%;
+        margin:auto;
+    }
 
-{% for blog in blogs%}  
-<!-- blogs를 blog라는 변수에 넣어서 보여준다. -->
+    a {text-decoration: none;}
 
-<hr>
-<a href="{% url 'detail' blog.id %}">
-{{blog.title}}
-<br>
-{{blog.pub_date}}
-<br>
-{{blog.summary}}
-<br>
-{% if blog.image %}
-<!-- if 꼭 해줘야한다 안하면 그림 없을 때 오류남ㅠㅠ! -->
-<img src="{{blog.image.url}}">
-{% endif %}
-</a>
+    a:link{
+        color:black;
+    }
 
+    a:visited {
+        color:black;
+        text-decoration: none;
+    }
 
-{% endfor %}
+    a:hover {
+        color:olivedrab;
+    }
+
+</style>
+
+<img src="{%static '2.jfif'%}" style="max-width: 100%;">
+
+<div>
+
+    <h1>❁ Blog YOUNG ❁</h1>
+
+    <a href="{% url 'new' %}" style="color:olivedrab;font-style: italic;font-weight:bold;">New!</a>
+
+    {% for blog in blogs%}  
+    <!-- blogs를 blog라는 변수에 넣어서 보여준다. -->
+
+    <hr>
+    <a href="{% url 'detail' blog.id %}">
+    {{blog.title}}
+    <br>
+    {{blog.pub_date}}</p>
+    <br>
+    {{blog.summary}}
+    <br>
+    {% if blog.image %}
+    <!-- if 꼭 해줘야한다 안하면 그림 없을 때 오류남ㅠㅠ! -->
+    <img src="{{blog.image.url}}">
+    {% endif %}
+    </a>
+
+    {% endfor %}
+</div>

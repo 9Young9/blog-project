@@ -1,14 +1,47 @@
-<h1>Detail page</h1>
+<a href="{% url 'list' %}" style="font-family:Georgia"> ⇦ Home </a>
+<style>
+    body {
+        background-color: goldenrod;   
 
-<h3>제목 : {{blog.title}}</h3>
+    }
+    div {
+        font-family:"Georgia";
+        text-align:center;
+        padding:5rem;
+        width:50%;
+        margin:auto;
+    }
 
-<hr>
+    a {
+        text-decoration: none;
+        font-weight: bold;
+    }
 
-<p>{{blog.pub_date}}</p>
+    a:link{
+        color:black;
+    }
 
-<p>{{blog.body}}</p>
+    a:visited {
+        color:black;
+        text-decoration: none;
 
-<a href="{% url 'edit' blog.id %}">수정하기</a>
-<a href="{% url 'delete' blog.id %}">삭제하기</a>
-<a href="{% url 'list' %}">홈으로</a>
-<!-- url에는 쌍따옴표"쓰면 오류난다 -->
+    }
+
+    a:hover {
+        color:olivedrab;
+    }
+</style>
+    <div>
+    <h1>{{blog.title}}</h1>
+    <hr>
+
+    <p>{{blog.pub_date}}</p>
+
+    <p>{{blog.body}}</p>
+
+    <a href="{% url 'edit' blog.id %}"> Edit</a>
+    <a>/</a>
+    <a href="{% url 'delete' blog.id %}"> Delete </a>
+
+    <!-- url 안에는 쌍따옴표"쓰면 오류난다 -->
+    </div>
